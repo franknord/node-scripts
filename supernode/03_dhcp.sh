@@ -11,7 +11,6 @@ uci -q batch <<EOF
     commit dhcp
 
     add firewall rule 
-    add firewall rule 
     
     set firewall.@rule[-1].name='Allow DHCP request (Mesh)'
     set firewall.@rule[-1].src='freifunk'
@@ -20,11 +19,6 @@ uci -q batch <<EOF
     set firewall.@rule[-1].target='ACCEPT'
     set firewall.@rule[-1].family='ipv4'   
 
-    set firewall.@rule[-2].name='DNS (Mesh)'
-    set firewall.@rule[-2].src='freifunk'
-    set firewall.@rule[-2].family='ipv4'                    
-    set firewall.@rule[-2].target='ACCEPT'                  
-    set firewall.@rule[-2].dest_port='53'
     commit firewall
 EOF
 /etc/init.d/dnsmasq restart
