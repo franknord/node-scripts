@@ -10,4 +10,4 @@ ip route add default dev \$INTERFACE table 66
 ip route add 172.27.8.0/25 dev br-freifunk table 66 
 EOF
 
-chmod 755 /etc/tinc/kbubackbone/tinc-ups
+chmod 755 /etc/tinc/kbubackbone/tinc-up
